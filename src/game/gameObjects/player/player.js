@@ -127,6 +127,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     // Gleich wie bei `heal()`
     EVENTS.emit("update-hp", this.hp)
   }
+  acitvateOverhealBonus() {
+    this.speed += 20
+    console.log("Überheilungsbonus aktiviert : geschwindigkeit erhöht")
+  }
 
   /**
    * Fügt dem Spieler einen Schlüssel hinzu.
