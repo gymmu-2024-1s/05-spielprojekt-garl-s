@@ -52,11 +52,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   update() {
-    const { left, right, up, down } = this.cursor
+    const { left, right, up, down, space } = this.cursor
     let isIdle = true
 
     this.body.setVelocityX(0)
-    this.body.setVelocityY(0)
+    if (this.scene.physics.getConfig().gravity.y === 0) {
+      this.body.setVelocityY(0)
+    }
 
     if (left.isDown) {
       this.body.setVelocityX(-this.speed)
@@ -126,6 +128,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     // Gleich wie bei `heal()`
     EVENTS.emit("update-hp", this.hp)
+  }
+  acitvateOverhealBonus() {
+    this.speed += 20
+    console.log("Überheilungsbonus aktiviert : geschwindigkeit erhöht")
   }
 
   /**

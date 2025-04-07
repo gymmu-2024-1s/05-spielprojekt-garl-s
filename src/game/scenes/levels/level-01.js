@@ -73,6 +73,7 @@ export default class Level01 extends Base2DScene {
       this.player.decreaseSpeed(100)
       this.player.damage(item.props.damageHp || 0)
 
+      this.scene.start("level-01")
       // TODO: Aktivieren Sie das hier, wenn ein Effekt über eine gewisse Zeit
       // passieren soll.
       // Hier wird der Spieler halb so gross, und mit jedem Frame wird er wieder
