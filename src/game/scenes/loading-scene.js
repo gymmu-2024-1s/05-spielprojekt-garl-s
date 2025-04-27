@@ -1,9 +1,18 @@
+// Damit importieren wir die Game-Engine phaser
 import Phaser from "phaser"
-/**
- * Spiellogik für das Level02.
- */
+
+// Damit erstellen wir die Klasse für die Lade-Szene und übernehmen die Eigenschaften von `Phaser.Szene`.
+// Das müssen Sie noch nicht genau verstehen.
 export default class LoadingScene extends Phaser.Scene {
+  /**
+   * Das ist eine spezielle Methode die bei der Instanziierung der Klasse
+   * aufgerufen wird. Wir brauchen diese Methode hier, damit wir `Phaser`
+   * den Namen/Schlüssel für unsere Szene übergeben können, damit wir die
+   * Szene später selber aufrufen können.
+   */
   constructor() {
+    // Damit wir der Konstuktor von `Phaser.Scene` aufgerufen, und wir übergeben
+    // den Schlüssel/Namen.
     super({ key: "loading" })
   }
 
